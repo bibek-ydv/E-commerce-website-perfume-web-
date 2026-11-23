@@ -1,0 +1,188 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Home | Flerique{% endblock title %}
+
+{% block banner-slider %}
+<style>
+    .hero-slide img {
+        filter: brightness(55%);
+        height: 90vh;
+        object-fit: cover;
+    }
+    .hero-caption {
+        position: absolute;
+        bottom: 22%;
+        left: 7%;
+        color: white;
+        animation: fadeInUp 1.3s ease;
+    }
+    .hero-caption h1 {
+        font-size: 3.8rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        text-shadow: 0 0 16px rgba(0,0,0,0.8);
+    }
+    .hero-caption p {
+        font-size: 1.2rem;
+        max-width: 45%;
+        opacity: 0.9;
+    }
+    .glass-box {
+        backdrop-filter: blur(14px);
+        background: rgba(255, 255, 255, 0.09);
+        padding: 14px 26px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        margin-top: 20px;
+        display: inline-block;
+        color: #f0c14b;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: 0.3s;
+    }
+    .glass-box:hover {
+        background: rgba(255, 255, 255, 0.18);
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .info-box {
+        background: linear-gradient(135deg, #0d0d0d, #1c1c1c);
+        border-radius: 25px;
+        padding: 50px;
+        color: white;
+        box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+        text-align: center;
+    }
+    .info-box h1 {
+        font-weight: 900;
+        letter-spacing: 1px;
+        color: #f0c14b;
+    }
+    .info-box p {
+        font-size: 1.2rem;
+        opacity: 0.85;
+        margin-top: 15px;
+    }
+    .product-card {
+        background: #ffffff;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: 0.4s;
+        border: none;
+        height: 100%;
+        cursor: pointer;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    }
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .product-img {
+        height: 280px;
+        object-fit: contain;
+        padding: 30px;
+        transition: 0.6s;
+    }
+    .product-card:hover .product-img {
+        transform: scale(1.1);
+    }
+    .product-card h5 {
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding-bottom: 15px;
+    }
+    .section-title {
+        text-align: center;
+        font-size: 2.7rem;
+        font-weight: 900;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+    }
+</style>
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active hero-slide">
+      <img src="{% static 'main/images/banner/banner/z1.jpg' %}" class="d-block w-100">
+      <div class="hero-caption">
+        <h1>Flerique Perfumes</h1>
+        <p>Where luxury meets timeless elegance — crafted fragrances to define your unique aura.</p>
+        <a href="{% url "shop" %}">
+          <div class="glass-box">Discover Now</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="carousel-item hero-slide">
+      <img src="{% static 'main/images/banner/banner/z2.jpg' %}" class="d-block w-100">
+      <div class="hero-caption">
+        <h1>Elegance in Every Drop</h1>
+        <p>Indulge in premium scents inspired by nature, passion, and sophistication.</p>
+        <a href="{% url "shop" %}">
+          <div class="glass-box">Shop Collection</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock banner-slider %}
+
+{% block information %}
+<div class="container my-5">
+  <div class="info-box">
+      <h1>Welcome to Flerique</h1>
+      <p>Discover the art of luxury with our exclusive range of perfumes. Each fragrance embodies elegance, sophistication, and timeless beauty crafted to perfection just for you.</p>
+  </div>
+</div>
+{% endblock information %}
+
+{% block main-content %}
+<div class="container">
+  <h2 class="section-title">Our Signature Perfumes</h2>
+
+  <div class="row g-4">
+
+      <div class="col-md-4 col-sm-6">
+          <div class="product-card">
+              <a href="{% url 'product-detail' 3 %}">
+                  <img src="{% static 'main/images/products/z5.jpg' %}" class="product-img">
+                  <div class="text-center p-3">
+                      <h5>Vanilla Whisper</h5>
+                  </div>
+              </a>
+          </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+          <div class="product-card">
+              <a href="{% url 'product-detail' 2 %}">
+                  <img src="{% static 'main/images/products/k1.jpg' %}" class="product-img">
+                  <div class="text-center p-3">
+                      <h5>Rose Elegance</h5>
+                  </div>
+              </a>
+          </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+          <div class="product-card">
+              <a href="{% url 'product-detail' 1 %}">
+                  <img src="{% static 'main/images/products/i2.png' %}" class="product-img">
+                  <div class="text-center p-3">
+                      <h5>Mystic Lavender</h5>
+                  </div>
+              </a>
+          </div>
+      </div>
+
+  </div>
+
+  <br><br>
+</div>
+{% endblock main-content %}

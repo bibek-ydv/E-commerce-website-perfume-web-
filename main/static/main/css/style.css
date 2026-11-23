@@ -1,0 +1,61 @@
+.product-img {
+  width: 50% !important;  /* adjust size */
+  height: auto !important;  /* keeps aspect ratio */
+}
+
+
+.smbg {
+    background-color: #fff;
+    background-image: linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+    background-image: -webkit-linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+    background-image: -moz-linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+    background-image: -ms-linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+    background-image: -o-linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+}
+
+.curdbgpro {
+    background-color: #fff;
+    background-image: linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+    background-image: -webkit-linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+    background-image: -moz-linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+    background-image: -ms-linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+    background-image: -o-linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+}
+
+.buttermilk {
+    background-color: #fff;
+    background-image: linear-gradient(#fff7ef, #fff);
+    background-image: -webkit-linear-gradient(#fff7ef, #fff);
+    background-image: -moz-linear-gradient(#fff7ef, #fff);
+    background-image: -ms-linear-gradient(#fff7ef, #fff);
+    background-image: -o-linear-gradient(#fff7ef, #fff);
+    padding: 50px 40px;
+    border: 1px solid #efe8e1;
+    padding-bottom: 20px;
+}
+.carousel-item {
+  height: 100vh; /* full screen height */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 10;
+}
+
+.carousel-caption h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 22px;
+}
+
